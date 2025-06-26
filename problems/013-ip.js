@@ -19,7 +19,7 @@
  * @returns {boolean}
  */
 function isIpValid(address) {
-    return undefined;
+    return (address.split(".").map(arg => Number(arg)).filter(arg => arg <= 255).filter(arg => arg >= 0).length === 4)
 }
 
 module.exports = isIpValid;
