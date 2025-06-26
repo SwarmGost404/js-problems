@@ -12,8 +12,23 @@
  * @param {string} value
  * @returns {boolean}
  */
+
+
+
 function isPalindrome(value) {
-    return undefined;
+    
+    let start = 0
+    let end = value.length - 1
+
+    while (start < end) {
+        if (value[start] !== value[end]) {
+            return false
+        }
+
+        start++
+        end = end - 1
+    }
+    return true
 }
 
 module.exports = isPalindrome;
