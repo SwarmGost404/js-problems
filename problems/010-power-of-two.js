@@ -12,7 +12,14 @@
  * @returns {number|undefined}
  */
 function getPower(n) {
-    return -1;
+    let res = 0
+    while ((2 ** res) <= n) {
+        if ((2 ** res) === n) {
+            return res
+        }
+        res++
+    }
+    return undefined
 }
 
 module.exports = getPower;
