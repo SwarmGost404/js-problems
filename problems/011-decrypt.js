@@ -16,7 +16,19 @@
  * @returns {string}
  */
 function decrypt(secret) {
-    return undefined;
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    const creater = secret.split("")
+    let res = '';
+    for (item of creater) {
+        if (item === "z") {
+            res = res + "a"
+        } else if (item === " ") {
+            res = res + " "
+        } else {
+            res = res + alphabet[alphabet.indexOf(item) + 1]
+        }
+    }
+    return res
 }
 
 module.exports = decrypt;
