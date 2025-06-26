@@ -18,7 +18,23 @@
  * @returns {number}
  */
 function getSpringMeltStreak(temperature) {
-    return undefined;
+    let stric = 0;
+    let res = 0;
+    for (item of temperature) {
+        if (item > 0) {
+            stric++
+        } else {
+            if (res < stric) {
+                res = stric
+            }
+            stric = 0
+        }
+        
+    }
+    if (res < stric) {
+        res = stric
+    }
+    return res
 }
 
 module.exports = getSpringMeltStreak;
