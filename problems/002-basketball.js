@@ -16,8 +16,19 @@
  * @returns {(number|undefined)}
  */
 function getWinner(points) {
-    
-    return undefined;
+    let res1 = 0
+    let res2 = 0
+    for (let item of points) {
+        res1 += Number(item.split("-")[0])
+        res2 += Number(item.split("-")[1]) 
+    }
+    if (res1 > res2) {
+        return 1
+    } else if (res1 < res2) {
+        return 2
+    } else if (res1 === res2) {
+        return undefined
+    }
 }
 
 module.exports = getWinner;
