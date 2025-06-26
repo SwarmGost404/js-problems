@@ -18,7 +18,7 @@
  * @returns {boolean}
  */
 function validatePassword(password) {
-    return undefined;
+    return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{7,}$/.test(password);
 }
 
 module.exports = validatePassword;
