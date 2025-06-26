@@ -12,7 +12,13 @@
  * @returns {undefined|number}
  */
 function checkBusTour(bridges) {
-    return -1;
+    for (item of bridges) {
+        if (item < 513) {
+            return bridges.indexOf(item) + 1
+        }
+        
+    }
+    return
 }
 
 module.exports = checkBusTour;
