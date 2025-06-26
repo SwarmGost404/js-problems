@@ -17,7 +17,12 @@
  * @returns {number}
  */
 function fibonacci(n) {
-    return undefined;
+    let res = [0, 1]
+    while (res.length <= n) {
+        res.push(res[res.length  - 1] + res[res.length  - 2])
+    }
+    
+    return res[n]
 }
 
 module.exports = fibonacci;
