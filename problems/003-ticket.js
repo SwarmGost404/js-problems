@@ -13,15 +13,14 @@
  * @param {string} number
  * @returns {boolean}
  */
+const sum = (str) => [...str].reduce((acc, digit) => acc + +digit, 0);
+
 function checkTicket(number) {
-    const fistHalph = number.slice(0, 3).split('')
-    const secondHalph = number.slice(3, 6).split('')
-    const res1 = fistHalph.reduce((acc, num) => acc + Number(num), 0);
-    const res2 = secondHalph.reduce((acc, num) => acc + Number(num), 0);
-    if (res1 === res2) {
-        return true
-    }
-    return false
+  const left = number.slice(0, 3);
+  const right = number.slice(3, 6);
+
+  return sum(left) === sum(right);
 }
+
 
 module.exports = checkTicket;

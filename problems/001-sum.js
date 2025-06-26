@@ -14,18 +14,8 @@
  * n = -100
  */
 function sum(n) {
-    if (n <= 1) {
-        return 1
-    }
-
-    let char = 1;
-    let res = 0;
-    while (char <= n) {
-        res = res + char
-        char = char + 1
-    }
-    return res;
-    
+  return n < 1 ? 1 : (n * (n + 1)) / 2;
 }
+// 4/5
 
 module.exports = sum;
