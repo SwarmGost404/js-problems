@@ -11,27 +11,20 @@
  *
  * @param {number} n целое число
  * @returns {number}
+ * n = -100
  */
 function sum(n) {
-    if (n < 1) {
-        let char = n;
-        let res = 0
-        while (char < 1) {
-            res += char
-
-            char++
-        }
-        return res
+    if (n <= 1) {
+        return 1
     }
 
     let char = 1;
-    let res = 0
-    while (char !== n) {
-        res += char
-
-        char++
+    let res = 0;
+    while (char <= n) {
+        res = res + char
+        char = char + 1
     }
-    return res
+    return res;
     
 }
 
