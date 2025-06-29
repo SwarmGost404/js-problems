@@ -13,7 +13,18 @@
  * @returns {undefined|number}
  */
 function census(list) {
-    return -1;
+    const males = list.filter(person => person.gender === 'Male');
+    if (males.length === 0) {
+        return undefined;
+    }
+    
+    const oldestMaleIndex = males.reduce((oldestIndex, currentMale, currentIndex) => {
+        return currentMale.age > males[oldestIndex].age ? currentIndex : oldestIndex;
+    }, 0);
+    
+    // Находим оригинальный индекс в исходном массиве
+    const originalIndex = list.indexOf(males[oldestMaleIndex]);
+    return originalIndex + 1; // так как в примере нумерация с 1
 }
 
 module.exports = census;
